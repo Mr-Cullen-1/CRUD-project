@@ -33,7 +33,7 @@ def delete_recipe(request, id):
 def update_recipe(request, id):
     queryset = Recipe.objects.get(id=id)
     
-    if queryset.method == "POST":
+    if request.method == 'POST':
         data = request.POST
         
         recipe_image = request.FILES.get('recipe_image')
